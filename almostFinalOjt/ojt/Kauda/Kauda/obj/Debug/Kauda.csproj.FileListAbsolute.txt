@@ -1,0 +1,10 @@
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\bin\Debug\Kauda.exe.config
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\bin\Debug\Kauda.exe
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\bin\Debug\Kauda.pdb
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\obj\Debug\Kauda.csproj.AssemblyReference.cache
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\obj\Debug\Kauda.Form1.resources
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\obj\Debug\Kauda.Properties.Resources.resources
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\obj\Debug\Kauda.csproj.GenerateResource.cache
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\obj\Debug\Kauda.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\obj\Debug\Kauda.exe
+C:\Users\Lenovo Laptop\Desktop\ojt\Kauda\Kauda\obj\Debug\Kauda.pdb
