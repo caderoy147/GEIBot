@@ -86,13 +86,14 @@
             this.specialBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.getTemperatureBtn_Click = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.temperatureCLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -131,12 +132,13 @@
             // serialPort1
             // 
             this.serialPort1.PortName = "COM7";
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.SerialPort1_DataReceived);
             // 
             // zStepNum
             // 
             this.zStepNum.BackColor = System.Drawing.Color.Maroon;
             this.zStepNum.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.zStepNum.Location = new System.Drawing.Point(32, 174);
+            this.zStepNum.Location = new System.Drawing.Point(33, 46);
             this.zStepNum.Name = "zStepNum";
             this.zStepNum.Size = new System.Drawing.Size(60, 20);
             this.zStepNum.TabIndex = 0;
@@ -154,7 +156,7 @@
             // 
             this.hStepNum.BackColor = System.Drawing.Color.Maroon;
             this.hStepNum.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hStepNum.Location = new System.Drawing.Point(32, 46);
+            this.hStepNum.Location = new System.Drawing.Point(32, 177);
             this.hStepNum.Name = "hStepNum";
             this.hStepNum.Size = new System.Drawing.Size(60, 20);
             this.hStepNum.TabIndex = 2;
@@ -184,7 +186,7 @@
             this.label3.BackColor = System.Drawing.Color.Maroon;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(32, 151);
+            this.label3.Location = new System.Drawing.Point(33, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 5;
@@ -196,7 +198,7 @@
             this.label4.BackColor = System.Drawing.Color.Maroon;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(31, 23);
+            this.label4.Location = new System.Drawing.Point(31, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 13;
@@ -302,23 +304,23 @@
             this.groupBox1.Controls.Add(this.yAxisBtn);
             this.groupBox1.Controls.Add(this.hAxisBtn);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.zTrackBar);
             this.groupBox1.Controls.Add(this.wTrackBar);
+            this.groupBox1.Controls.Add(this.zTrackBar);
             this.groupBox1.Controls.Add(this.vTrackBar);
             this.groupBox1.Controls.Add(this.yTrackBar);
             this.groupBox1.Controls.Add(this.hTrackBar);
             this.groupBox1.Controls.Add(this.hStepNum);
-            this.groupBox1.Controls.Add(this.zStepNum);
             this.groupBox1.Controls.Add(this.wAxisBtn);
             this.groupBox1.Controls.Add(this.yStepNum);
             this.groupBox1.Controls.Add(this.vAxisBtn);
+            this.groupBox1.Controls.Add(this.zStepNum);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.wStepNum);
             this.groupBox1.Controls.Add(this.vStepNum);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(26, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(832, 400);
@@ -328,7 +330,7 @@
             // zAxisBtn
             // 
             this.zAxisBtn.BackColor = System.Drawing.Color.Gold;
-            this.zAxisBtn.Location = new System.Drawing.Point(119, 172);
+            this.zAxisBtn.Location = new System.Drawing.Point(120, 44);
             this.zAxisBtn.Name = "zAxisBtn";
             this.zAxisBtn.Size = new System.Drawing.Size(69, 23);
             this.zAxisBtn.TabIndex = 67;
@@ -350,7 +352,7 @@
             // hAxisBtn
             // 
             this.hAxisBtn.BackColor = System.Drawing.Color.Gold;
-            this.hAxisBtn.Location = new System.Drawing.Point(119, 42);
+            this.hAxisBtn.Location = new System.Drawing.Point(119, 173);
             this.hAxisBtn.Name = "hAxisBtn";
             this.hAxisBtn.Size = new System.Drawing.Size(69, 23);
             this.hAxisBtn.TabIndex = 65;
@@ -564,7 +566,7 @@
             // 
             // zTrackBar
             // 
-            this.zTrackBar.Location = new System.Drawing.Point(207, 168);
+            this.zTrackBar.Location = new System.Drawing.Point(208, 40);
             this.zTrackBar.Maximum = 360;
             this.zTrackBar.Minimum = -360;
             this.zTrackBar.Name = "zTrackBar";
@@ -608,7 +610,7 @@
             // 
             // hTrackBar
             // 
-            this.hTrackBar.Location = new System.Drawing.Point(207, 40);
+            this.hTrackBar.Location = new System.Drawing.Point(207, 171);
             this.hTrackBar.Maximum = 360;
             this.hTrackBar.Minimum = -360;
             this.hTrackBar.Name = "hTrackBar";
@@ -697,13 +699,14 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.getTemperatureBtn_Click);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.temperatureCLabel);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label11);
@@ -719,6 +722,17 @@
             this.groupBox5.TabIndex = 44;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "system status";
+            // 
+            // getTemperatureBtn_Click
+            // 
+            this.getTemperatureBtn_Click.BackColor = System.Drawing.Color.Gold;
+            this.getTemperatureBtn_Click.Location = new System.Drawing.Point(217, 74);
+            this.getTemperatureBtn_Click.Name = "getTemperatureBtn_Click";
+            this.getTemperatureBtn_Click.Size = new System.Drawing.Size(69, 23);
+            this.getTemperatureBtn_Click.TabIndex = 62;
+            this.getTemperatureBtn_Click.Text = "send";
+            this.getTemperatureBtn_Click.UseVisualStyleBackColor = false;
+            this.getTemperatureBtn_Click.Click += new System.EventHandler(this.getTemperatureBtn_Click_Click);
             // 
             // button2
             // 
@@ -780,15 +794,15 @@
             this.label15.TabIndex = 26;
             this.label15.Text = "POS:";
             // 
-            // label14
+            // temperatureCLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(222, 27);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 17);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "POS:";
+            this.temperatureCLabel.AutoSize = true;
+            this.temperatureCLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.temperatureCLabel.Location = new System.Drawing.Point(222, 27);
+            this.temperatureCLabel.Name = "temperatureCLabel";
+            this.temperatureCLabel.Size = new System.Drawing.Size(28, 17);
+            this.temperatureCLabel.TabIndex = 25;
+            this.temperatureCLabel.Text = "tep";
             // 
             // label13
             // 
@@ -1016,7 +1030,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label temperatureCLabel;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -1059,6 +1073,7 @@
         private System.Windows.Forms.TextBox vSpeedText;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label danceStatus;
+        private System.Windows.Forms.Button getTemperatureBtn_Click;
     }
 }
 

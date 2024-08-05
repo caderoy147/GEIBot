@@ -16,6 +16,8 @@ namespace Kauda
         private const int W_MIN_ACTUAL = 10;
         private const int W_MAX_DISPLAY = 180; // Assuming 100 is the maximum value
 
+        private Timer sensorTimer;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace Kauda
             wTrackBar.Minimum = 0;
             wTrackBar.Maximum = W_MAX_DISPLAY;
             wStepNum.Text = "0";
+
+
 
             SetupSpeedControls();
             SetupSpecialMovesCombo();
@@ -213,15 +217,15 @@ namespace Kauda
             progressBar.Maximum = 100;
             progressBar.Value = 50;
 
-            trackBar.Scroll += (sender, e) => UpdateSpeedControl(trackBar, textBox, progressBar, axis);
-            textBox.TextChanged += (sender, e) => UpdateSpeedControlFromText(trackBar, textBox, progressBar, axis);
+            trackBar.Scroll += (sender, e) => UpdateSpeedControlUI(trackBar, textBox, progressBar);
+            trackBar.MouseUp += (sender, e) => SendSpeedCommand(axis, trackBar.Value);
+            textBox.Leave += (sender, e) => UpdateSpeedControlFromText(trackBar, textBox, progressBar, axis);
         }
 
-        private void UpdateSpeedControl(TrackBar trackBar, TextBox textBox, ProgressBar progressBar, char axis)
+        private void UpdateSpeedControlUI(TrackBar trackBar, TextBox textBox, ProgressBar progressBar)
         {
             textBox.Text = trackBar.Value.ToString();
             progressBar.Value = trackBar.Value;
-            SendSpeedCommand(axis, trackBar.Value);
         }
 
         private void UpdateSpeedControlFromText(TrackBar trackBar, TextBox textBox, ProgressBar progressBar, char axis)
@@ -237,8 +241,16 @@ namespace Kauda
 
         private void SendSpeedCommand(char axis, int speed)
         {
-            string command = $"S{axis}{speed}\n";
-            serialPort1.Write(command);
+            string command = $"S{axis}{speed:D3}\n";
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Write(command);
+                Console.WriteLine($"Sent speed command: {command}");
+            }
+            else
+            {
+                MessageBox.Show("Serial port is not open. Please check the connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void SendMovementCommand(char axis, int steps)
@@ -288,7 +300,7 @@ namespace Kauda
 
         private void SpecialMovesCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (specialBox.SelectedItem.ToString() == "Crab Dance")
+            if (specialBox.SelectedIndex != -1 && specialBox.SelectedItem.ToString() == "Crab Dance")
             {
                 ExecuteCrabDance();
             }
@@ -324,14 +336,25 @@ namespace Kauda
 
         private void ProcessSerialData(string data)
         {
-            switch (data)
+            if (data.StartsWith("MC") || data.StartsWith("DC"))
             {
-                case "MC":
-                    HandleMovementComplete();
-                    break;
-                case "DC":
-                    HandleDanceComplete();
-                    break;
+                switch (data)
+                {
+                    case "MC":
+                        HandleMovementComplete();
+                        break;
+                    case "DC":
+                        HandleDanceComplete();
+                        break;
+                }
+            }
+            else if (data.StartsWith("DHT sensor error"))
+            {
+                UpdateStatus("DHT sensor error");
+            }
+            else
+            {
+                ProcessSensorData(data);
             }
         }
 
@@ -351,6 +374,47 @@ namespace Kauda
         {
             // Assuming you have a status label on your form
             this.Invoke(new Action(() => danceStatus.Text = message));
+        }
+
+        //temperature sensor
+        private void ProcessSensorData(string data)
+        {
+            if (string.IsNullOrEmpty(data))
+            {
+                UpdateTemperatureDisplay("No temperature detected", 0);
+            }
+            else
+            {
+                string[] parts = data.Split(',');
+                if (parts.Length == 3 && float.TryParse(parts[1], out float temperatureC))
+                {
+                    UpdateTemperatureDisplay($"Temperature: {temperatureC:F1}°C", (int)temperatureC);
+                }
+                else
+                {
+                    UpdateTemperatureDisplay("Invalid temperature data", 0);
+                }
+            }
+        }
+
+        private void UpdateTemperatureDisplay(string text, int value)
+        {
+            this.Invoke(new Action(() => {
+                temperatureCLabel.Text = text;
+                tempReading.Value = value;
+            }));
+        }
+
+        private void getTemperatureBtn_Click_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.WriteLine("T");
+            }
+            else
+            {
+                MessageBox.Show("Serial port is not open. Please check the connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
      
