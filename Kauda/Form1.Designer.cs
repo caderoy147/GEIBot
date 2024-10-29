@@ -114,6 +114,14 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.progressBar5 = new System.Windows.Forms.ProgressBar();
+            this.progressBar6 = new System.Windows.Forms.ProgressBar();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vTrackBarSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wTrackBarSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hTrackBarSpeed)).BeginInit();
@@ -177,7 +185,7 @@
             this.label2.BackColor = System.Drawing.Color.Maroon;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(60, 97);
+            this.label2.Location = new System.Drawing.Point(6, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 4;
@@ -189,7 +197,7 @@
             this.label3.BackColor = System.Drawing.Color.Maroon;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(55, 11);
+            this.label3.Location = new System.Drawing.Point(8, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 5;
@@ -201,7 +209,7 @@
             this.label4.BackColor = System.Drawing.Color.Maroon;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(55, 173);
+            this.label4.Location = new System.Drawing.Point(6, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 13;
@@ -227,9 +235,9 @@
             // 
             this.gripBtn.BackColor = System.Drawing.Color.Gold;
             this.gripBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gripBtn.Location = new System.Drawing.Point(453, 437);
+            this.gripBtn.Location = new System.Drawing.Point(140, 433);
             this.gripBtn.Name = "gripBtn";
-            this.gripBtn.Size = new System.Drawing.Size(51, 32);
+            this.gripBtn.Size = new System.Drawing.Size(66, 32);
             this.gripBtn.TabIndex = 27;
             this.gripBtn.Text = "grip";
             this.gripBtn.UseVisualStyleBackColor = false;
@@ -249,9 +257,9 @@
             // 
             this.releaseBtn.BackColor = System.Drawing.Color.Gold;
             this.releaseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.releaseBtn.Location = new System.Drawing.Point(511, 437);
+            this.releaseBtn.Location = new System.Drawing.Point(454, 431);
             this.releaseBtn.Name = "releaseBtn";
-            this.releaseBtn.Size = new System.Drawing.Size(55, 32);
+            this.releaseBtn.Size = new System.Drawing.Size(102, 32);
             this.releaseBtn.TabIndex = 32;
             this.releaseBtn.Text = "release";
             this.releaseBtn.UseVisualStyleBackColor = false;
@@ -263,7 +271,7 @@
             this.label8.BackColor = System.Drawing.Color.Maroon;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(55, 271);
+            this.label8.Location = new System.Drawing.Point(8, 253);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 20);
             this.label8.TabIndex = 34;
@@ -275,7 +283,7 @@
             this.label9.BackColor = System.Drawing.Color.Maroon;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.Location = new System.Drawing.Point(51, 355);
+            this.label9.Location = new System.Drawing.Point(8, 328);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 20);
             this.label9.TabIndex = 36;
@@ -285,7 +293,7 @@
             // 
             this.vAxisBtn.BackColor = System.Drawing.Color.Gold;
             this.vAxisBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vAxisBtn.Location = new System.Drawing.Point(137, 253);
+            this.vAxisBtn.Location = new System.Drawing.Point(137, 268);
             this.vAxisBtn.Name = "vAxisBtn";
             this.vAxisBtn.Size = new System.Drawing.Size(69, 23);
             this.vAxisBtn.TabIndex = 37;
@@ -297,7 +305,7 @@
             // 
             this.wAxisBtn.BackColor = System.Drawing.Color.Gold;
             this.wAxisBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wAxisBtn.Location = new System.Drawing.Point(137, 337);
+            this.wAxisBtn.Location = new System.Drawing.Point(139, 349);
             this.wAxisBtn.Name = "wAxisBtn";
             this.wAxisBtn.Size = new System.Drawing.Size(69, 23);
             this.wAxisBtn.TabIndex = 38;
@@ -345,7 +353,7 @@
             // 
             this.speedBtnW.BackColor = System.Drawing.Color.Gold;
             this.speedBtnW.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.speedBtnW.Location = new System.Drawing.Point(137, 366);
+            this.speedBtnW.Location = new System.Drawing.Point(139, 373);
             this.speedBtnW.Name = "speedBtnW";
             this.speedBtnW.Size = new System.Drawing.Size(69, 23);
             this.speedBtnW.TabIndex = 71;
@@ -357,7 +365,7 @@
             // 
             this.speedBtnV.BackColor = System.Drawing.Color.Gold;
             this.speedBtnV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.speedBtnV.Location = new System.Drawing.Point(137, 279);
+            this.speedBtnV.Location = new System.Drawing.Point(137, 294);
             this.speedBtnV.Name = "speedBtnV";
             this.speedBtnV.Size = new System.Drawing.Size(69, 23);
             this.speedBtnV.TabIndex = 70;
@@ -591,9 +599,9 @@
             // 
             this.textBox4.BackColor = System.Drawing.Color.Maroon;
             this.textBox4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.Location = new System.Drawing.Point(137, 437);
+            this.textBox4.Location = new System.Drawing.Point(76, 437);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(40, 20);
+            this.textBox4.Size = new System.Drawing.Size(58, 20);
             this.textBox4.TabIndex = 56;
             this.textBox4.Text = " ";
             // 
@@ -603,7 +611,7 @@
             this.label6.BackColor = System.Drawing.Color.Maroon;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(51, 437);
+            this.label6.Location = new System.Drawing.Point(8, 435);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 20);
             this.label6.TabIndex = 54;
@@ -611,7 +619,7 @@
             // 
             // gTrackBarGrip
             // 
-            this.gTrackBarGrip.Location = new System.Drawing.Point(209, 428);
+            this.gTrackBarGrip.Location = new System.Drawing.Point(212, 431);
             this.gTrackBarGrip.Name = "gTrackBarGrip";
             this.gTrackBarGrip.Size = new System.Drawing.Size(223, 45);
             this.gTrackBarGrip.TabIndex = 53;
@@ -838,6 +846,14 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.progressBar5);
+            this.panel3.Controls.Add(this.progressBar6);
+            this.panel3.Controls.Add(this.label27);
+            this.panel3.Controls.Add(this.label28);
+            this.panel3.Controls.Add(this.progressBar2);
+            this.panel3.Controls.Add(this.progressBar3);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Controls.Add(this.label26);
             this.panel3.Controls.Add(this.label23);
             this.panel3.Controls.Add(this.label24);
             this.panel3.Controls.Add(this.label21);
@@ -1012,6 +1028,74 @@
             this.label24.TabIndex = 80;
             this.label24.Text = "°";
             // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(31, 299);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(100, 10);
+            this.progressBar2.TabIndex = 82;
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(94, 274);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(33, 19);
+            this.progressBar3.TabIndex = 83;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(52, 274);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(41, 17);
+            this.label25.TabIndex = 84;
+            this.label25.Text = "POS:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(7, 292);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(23, 17);
+            this.label26.TabIndex = 85;
+            this.label26.Text = "°C";
+            // 
+            // progressBar5
+            // 
+            this.progressBar5.Location = new System.Drawing.Point(31, 380);
+            this.progressBar5.Name = "progressBar5";
+            this.progressBar5.Size = new System.Drawing.Size(100, 10);
+            this.progressBar5.TabIndex = 86;
+            // 
+            // progressBar6
+            // 
+            this.progressBar6.Location = new System.Drawing.Point(94, 353);
+            this.progressBar6.Name = "progressBar6";
+            this.progressBar6.Size = new System.Drawing.Size(33, 19);
+            this.progressBar6.TabIndex = 87;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(52, 355);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(41, 17);
+            this.label27.TabIndex = 88;
+            this.label27.Text = "POS:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(7, 373);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(23, 17);
+            this.label28.TabIndex = 89;
+            this.label28.Text = "°C";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1140,6 +1224,14 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ProgressBar progressBar5;
+        private System.Windows.Forms.ProgressBar progressBar6;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
     }
 }
 
