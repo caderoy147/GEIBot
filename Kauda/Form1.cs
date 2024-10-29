@@ -21,7 +21,7 @@ namespace Kauda
         public Form1()
         {
             InitializeComponent();
-            serialPort1.Open();
+           // serialPort1.Open();
 
             // Add event handlers for TextChanged events
             zStepNum.TextChanged += StepNum_TextChanged;
