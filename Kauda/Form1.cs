@@ -9,10 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
 namespace Kauda
 {
     public partial class Form1 : Form
     {
+       
+       // private StyledPanel panel7;
+
         private const int W_MIN_ACTUAL = 10;
         private const int W_MAX_DISPLAY = 180; // Assuming 100 is the maximum value
 
@@ -21,7 +27,8 @@ namespace Kauda
         public Form1()
         {
             InitializeComponent();
-           // serialPort1.Open();
+        
+            // serialPort1.Open();
 
             // Add event handlers for TextChanged events
             zStepNum.TextChanged += StepNum_TextChanged;
@@ -40,7 +47,8 @@ namespace Kauda
             SetupSpeedControls();
             SetupSpecialMovesCombo();
         }
-
+        
+        
         private void StepNum_TextChanged(object sender, EventArgs e)
         {
             if (sender is TextBox textBox && int.TryParse(textBox.Text, out int value))
@@ -415,6 +423,36 @@ namespace Kauda
             {
                 MessageBox.Show("Serial port is not open. Please check the connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void vTrackBarSpeed_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label36_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
         }
     }
      
