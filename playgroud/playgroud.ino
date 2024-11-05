@@ -1,5 +1,4 @@
 #include <DHT.h>
-
 #include <AccelStepper.h>
 #include <MultiStepper.h>
 #include <Servo.h>
@@ -7,32 +6,25 @@
 
 //temp
 #define DHTPIN 41
-
 // Define the stepper pins
 #define EN_PIN    8 // Enable
-
 // Z axis (bottom)
 #define Z_STEP_PIN  4 
 #define Z_DIR_PIN   7 
-
 // Y axis
 #define Y_STEP_PIN  3 
 #define Y_DIR_PIN   6 
-
 // H axis
 #define H_STEP_PIN  2 
 #define H_DIR_PIN   5 
-
 // Servo motor pins
 #define SERVO_PIN_1  45  // V axis
 #define SERVO_PIN_2  46  // W axis
-
 // ULN stepper (for gripper)
 #define OUTPUT1   31  // Connected to the Blue coloured wire 7
 #define OUTPUT2   35  // Connected to the Pink coloured wire 5
 #define OUTPUT3   33  // Connected to the Yellow coloured wire 6
 #define OUTPUT4   37  // Connected to the Orange coloured wire 4
-
 // Create the stepper motor objects
 AccelStepper stepperZ(AccelStepper::DRIVER, Z_STEP_PIN, Z_DIR_PIN);
 AccelStepper stepperY(AccelStepper::DRIVER, Y_STEP_PIN, Y_DIR_PIN);
@@ -40,10 +32,8 @@ AccelStepper stepperH(AccelStepper::DRIVER, H_STEP_PIN, H_DIR_PIN);
 
 // Create the MultiStepper object
 MultiStepper steppers;
-
 //temp obj
 DHT dht;
-
 Servo myservo;  // V axis
 Servo myservo1; // W axis
 
@@ -60,9 +50,6 @@ int speedH = 1000;
 //servo speeds
 int speedV = 10;  // Default speed for V servo (degrees per second)
 int speedW = 10;  // Default speed for W servo (degrees per second)
-
-
-
 // Current positions for servos (DEFUALT)
 int currentPosV = 90;
 int currentPosW = 90;

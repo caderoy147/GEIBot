@@ -126,21 +126,21 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.label34 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1214,6 +1214,56 @@
             this.panel6.Size = new System.Drawing.Size(150, 159);
             this.panel6.TabIndex = 91;
             // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Gold;
+            this.label38.Location = new System.Drawing.Point(14, 83);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(91, 17);
+            this.label38.TabIndex = 60;
+            this.label38.Text = "Humidity: 42%";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.Gold;
+            this.label37.Location = new System.Drawing.Point(20, 46);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(115, 17);
+            this.label37.TabIndex = 59;
+            this.label37.Text = "----  Disconected !";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.Gold;
+            this.label36.Location = new System.Drawing.Point(13, 110);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(74, 17);
+            this.label36.TabIndex = 58;
+            this.label36.Text = "Temp: 42°C";
+            this.label36.Click += new System.EventHandler(this.label36_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
+            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.Gold;
+            this.label30.Location = new System.Drawing.Point(13, 18);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(102, 20);
+            this.label30.TabIndex = 57;
+            this.label30.Text = "System Status";
+            this.label30.Click += new System.EventHandler(this.label30_Click);
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -1250,6 +1300,17 @@
             this.panel7.Size = new System.Drawing.Size(578, 81);
             this.panel7.TabIndex = 91;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Gold;
+            this.label32.Location = new System.Drawing.Point(17, 51);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(10, 15);
+            this.label32.TabIndex = 83;
+            this.label32.Text = "!";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(64)))), ((int)(((byte)(60)))));
@@ -1274,6 +1335,17 @@
             this.panel5.Size = new System.Drawing.Size(578, 81);
             this.panel5.TabIndex = 90;
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.Gold;
+            this.label31.Location = new System.Drawing.Point(17, 51);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(10, 15);
+            this.label31.TabIndex = 82;
+            this.label31.Text = "!";
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(64)))), ((int)(((byte)(60)))));
@@ -1296,6 +1368,17 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(578, 81);
             this.panel8.TabIndex = 92;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Gold;
+            this.label33.Location = new System.Drawing.Point(17, 51);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(10, 15);
+            this.label33.TabIndex = 84;
+            this.label33.Text = "!";
             // 
             // panel9
             // 
@@ -1320,6 +1403,17 @@
             this.panel9.Size = new System.Drawing.Size(578, 81);
             this.panel9.TabIndex = 93;
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Gold;
+            this.label34.Location = new System.Drawing.Point(17, 51);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(10, 15);
+            this.label34.TabIndex = 90;
+            this.label34.Text = "!";
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(64)))), ((int)(((byte)(60)))));
@@ -1343,63 +1437,6 @@
             this.panel10.Size = new System.Drawing.Size(578, 81);
             this.panel10.TabIndex = 94;
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
-            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.Gold;
-            this.label30.Location = new System.Drawing.Point(13, 18);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(102, 20);
-            this.label30.TabIndex = 57;
-            this.label30.Text = "System Status";
-            this.label30.Click += new System.EventHandler(this.label30_Click);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.Gold;
-            this.label31.Location = new System.Drawing.Point(17, 51);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(10, 15);
-            this.label31.TabIndex = 82;
-            this.label31.Text = "!";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.Gold;
-            this.label32.Location = new System.Drawing.Point(17, 51);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(10, 15);
-            this.label32.TabIndex = 83;
-            this.label32.Text = "!";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Gold;
-            this.label33.Location = new System.Drawing.Point(17, 51);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(10, 15);
-            this.label33.TabIndex = 84;
-            this.label33.Text = "!";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.Gold;
-            this.label34.Location = new System.Drawing.Point(17, 51);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(10, 15);
-            this.label34.TabIndex = 90;
-            this.label34.Text = "!";
-            // 
             // label35
             // 
             this.label35.AutoSize = true;
@@ -1410,43 +1447,6 @@
             this.label35.Size = new System.Drawing.Size(10, 15);
             this.label35.TabIndex = 91;
             this.label35.Text = "!";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.Gold;
-            this.label36.Location = new System.Drawing.Point(13, 110);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(74, 17);
-            this.label36.TabIndex = 58;
-            this.label36.Text = "Temp: 42°C";
-            this.label36.Click += new System.EventHandler(this.label36_Click);
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.Gold;
-            this.label37.Location = new System.Drawing.Point(20, 46);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(115, 17);
-            this.label37.TabIndex = 59;
-            this.label37.Text = "----  Disconected !";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
-            this.label38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.Gold;
-            this.label38.Location = new System.Drawing.Point(14, 83);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(91, 17);
-            this.label38.TabIndex = 60;
-            this.label38.Text = "Humidity: 42%";
             // 
             // Form1
             // 
@@ -1468,9 +1468,10 @@
             this.Controls.Add(this.shapeContainer2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(179)))), ((int)(((byte)(8)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "ARM";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
