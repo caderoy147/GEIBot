@@ -43,8 +43,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rectangleShape4 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.wAxisBtn = new System.Windows.Forms.Button();
             this.hStepNum = new System.Windows.Forms.TextBox();
             this.vAxisBtn = new System.Windows.Forms.Button();
@@ -295,21 +293,6 @@
             this.panel2.Size = new System.Drawing.Size(138, 53);
             this.panel2.TabIndex = 66;
             // 
-            // rectangleShape4
-            // 
-            this.rectangleShape4.Location = new System.Drawing.Point(0, 0);
-            this.rectangleShape4.Name = "";
-            this.rectangleShape4.Size = new System.Drawing.Size(0, 0);
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Size = new System.Drawing.Size(1204, 601);
-            this.shapeContainer2.TabIndex = 68;
-            this.shapeContainer2.TabStop = false;
-            // 
             // wAxisBtn
             // 
             this.wAxisBtn.BackColor = System.Drawing.Color.Maroon;
@@ -366,6 +349,7 @@
             this.tempReading.Name = "tempReading";
             this.tempReading.Size = new System.Drawing.Size(29, 14);
             this.tempReading.TabIndex = 3;
+            this.tempReading.Click += new System.EventHandler(this.tempReading_Click);
             // 
             // hTrackBar
             // 
@@ -639,6 +623,7 @@
             this.hTrackBarSpeed.Size = new System.Drawing.Size(254, 45);
             this.hTrackBarSpeed.TabIndex = 57;
             this.hTrackBarSpeed.TickFrequency = 10;
+            this.hTrackBarSpeed.Scroll += new System.EventHandler(this.hTrackBarSpeed_Scroll);
             // 
             // zStepNum
             // 
@@ -1465,7 +1450,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.shapeContainer2);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(179)))), ((int)(((byte)(8)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

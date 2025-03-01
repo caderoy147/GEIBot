@@ -455,7 +455,15 @@ namespace Kauda
 
         }
 
+        private void tempReading_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void hTrackBarSpeed_Scroll(object sender, EventArgs e)
+        {
+
+        }
     }
      
 }
