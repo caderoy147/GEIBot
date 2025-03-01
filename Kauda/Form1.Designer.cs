@@ -1508,8 +1508,6 @@
         private System.Windows.Forms.Button getTemperatureBtn_Click;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape4;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private System.Windows.Forms.Button wAxisBtn;
         private System.Windows.Forms.TextBox hStepNum;
         private System.Windows.Forms.Button vAxisBtn;
