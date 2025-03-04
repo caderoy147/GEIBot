@@ -35,7 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.specialBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.upload = new System.Windows.Forms.Button();
             this.getTemperatureBtn_Click = new System.Windows.Forms.Button();
             this.temperatureCLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -77,13 +77,13 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.progressBarSpdY = new System.Windows.Forms.ProgressBar();
             this.progressBar4 = new System.Windows.Forms.ProgressBar();
-            this.button6 = new System.Windows.Forms.Button();
+            this.settings = new System.Windows.Forms.Button();
             this.zSpeedText = new System.Windows.Forms.TextBox();
             this.yTrackBarSpeed = new System.Windows.Forms.TrackBar();
             this.zTrackBarSpeed = new System.Windows.Forms.TrackBar();
             this.speedBtnY = new System.Windows.Forms.Button();
             this.progressBarSpdZ = new System.Windows.Forms.ProgressBar();
-            this.button2 = new System.Windows.Forms.Button();
+            this.calibrate = new System.Windows.Forms.Button();
             this.speedBtnZ = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -124,6 +124,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -199,22 +200,23 @@
             this.specialBox.Name = "specialBox";
             this.specialBox.Size = new System.Drawing.Size(79, 21);
             this.specialBox.TabIndex = 0;
+            this.specialBox.SelectedIndexChanged += new System.EventHandler(this.specialBox_SelectedIndexChanged);
             // 
-            // button1
+            // upload
             // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.Gold;
-            this.button1.Location = new System.Drawing.Point(16, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 53);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "UPLOAD";
-            this.button1.UseVisualStyleBackColor = false;
+            this.upload.BackColor = System.Drawing.Color.Maroon;
+            this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upload.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
+            this.upload.FlatAppearance.BorderSize = 3;
+            this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upload.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.upload.ForeColor = System.Drawing.Color.Gold;
+            this.upload.Location = new System.Drawing.Point(16, 271);
+            this.upload.Name = "upload";
+            this.upload.Size = new System.Drawing.Size(138, 53);
+            this.upload.TabIndex = 39;
+            this.upload.Text = "UPLOAD";
+            this.upload.UseVisualStyleBackColor = false;
             // 
             // getTemperatureBtn_Click
             // 
@@ -670,21 +672,21 @@
             this.progressBar4.Size = new System.Drawing.Size(84, 10);
             this.progressBar4.TabIndex = 5;
             // 
-            // button6
+            // settings
             // 
-            this.button6.BackColor = System.Drawing.Color.Maroon;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
-            this.button6.FlatAppearance.BorderSize = 3;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Gold;
-            this.button6.Location = new System.Drawing.Point(16, 193);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(138, 53);
-            this.button6.TabIndex = 64;
-            this.button6.Text = "SETTINGS";
-            this.button6.UseVisualStyleBackColor = false;
+            this.settings.BackColor = System.Drawing.Color.Maroon;
+            this.settings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.settings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
+            this.settings.FlatAppearance.BorderSize = 3;
+            this.settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settings.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settings.ForeColor = System.Drawing.Color.Gold;
+            this.settings.Location = new System.Drawing.Point(16, 193);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(138, 53);
+            this.settings.TabIndex = 64;
+            this.settings.Text = "SETTINGS";
+            this.settings.UseVisualStyleBackColor = false;
             // 
             // zSpeedText
             // 
@@ -702,7 +704,6 @@
             this.yTrackBarSpeed.Size = new System.Drawing.Size(254, 45);
             this.yTrackBarSpeed.TabIndex = 56;
             this.yTrackBarSpeed.TickFrequency = 10;
-
             // 
             // zTrackBarSpeed
             // 
@@ -737,21 +738,21 @@
             this.progressBarSpdZ.Size = new System.Drawing.Size(84, 10);
             this.progressBarSpdZ.TabIndex = 60;
             // 
-            // button2
+            // calibrate
             // 
-            this.button2.BackColor = System.Drawing.Color.Maroon;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Gold;
-            this.button2.Location = new System.Drawing.Point(16, 115);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 53);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "CALIBRATE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.calibrate.BackColor = System.Drawing.Color.Maroon;
+            this.calibrate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.calibrate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
+            this.calibrate.FlatAppearance.BorderSize = 3;
+            this.calibrate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.calibrate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calibrate.ForeColor = System.Drawing.Color.Gold;
+            this.calibrate.Location = new System.Drawing.Point(16, 115);
+            this.calibrate.Name = "calibrate";
+            this.calibrate.Size = new System.Drawing.Size(138, 53);
+            this.calibrate.TabIndex = 40;
+            this.calibrate.Text = "CALIBRATE";
+            this.calibrate.UseVisualStyleBackColor = false;
             // 
             // speedBtnZ
             // 
@@ -800,7 +801,6 @@
             this.gTrackBarGrip.Name = "gTrackBarGrip";
             this.gTrackBarGrip.Size = new System.Drawing.Size(252, 45);
             this.gTrackBarGrip.TabIndex = 53;
-
             // 
             // label16
             // 
@@ -846,7 +846,6 @@
             this.wSpeedText.Name = "wSpeedText";
             this.wSpeedText.Size = new System.Drawing.Size(39, 20);
             this.wSpeedText.TabIndex = 67;
-
             // 
             // vSpeedText
             // 
@@ -878,7 +877,6 @@
             this.vTrackBarSpeed.Size = new System.Drawing.Size(254, 45);
             this.vTrackBarSpeed.TabIndex = 65;
             this.vTrackBarSpeed.TickFrequency = 10;
-
             // 
             // humidityReading
             // 
@@ -895,7 +893,6 @@
             this.wTrackBarSpeed.Size = new System.Drawing.Size(254, 45);
             this.wTrackBarSpeed.TabIndex = 66;
             this.wTrackBarSpeed.TickFrequency = 10;
-
             // 
             // gripBtn
             // 
@@ -1174,10 +1171,10 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
             this.panel4.Controls.Add(this.temperatureCLabel);
             this.panel4.Controls.Add(this.panel2);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.upload);
+            this.panel4.Controls.Add(this.settings);
             this.panel4.Controls.Add(this.panel6);
-            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.calibrate);
             this.panel4.Controls.Add(this.label29);
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -1188,6 +1185,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
+            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.progressBar1);
             this.panel6.Controls.Add(this.label38);
             this.panel6.Controls.Add(this.label37);
@@ -1197,6 +1195,22 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(150, 159);
             this.panel6.TabIndex = 91;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Maroon;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(138)))), ((int)(((byte)(4)))));
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(179)))), ((int)(((byte)(8)))));
+            this.button1.Location = new System.Drawing.Point(88, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 28);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "update";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label38
             // 
@@ -1233,7 +1247,6 @@
             this.label36.Size = new System.Drawing.Size(74, 17);
             this.label36.TabIndex = 58;
             this.label36.Text = "Temp: 42°C";
-
             // 
             // label30
             // 
@@ -1246,7 +1259,6 @@
             this.label30.Size = new System.Drawing.Size(102, 20);
             this.label30.TabIndex = 57;
             this.label30.Text = "System Status";
-
             // 
             // label29
             // 
@@ -1455,7 +1467,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ARM";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1498,7 +1509,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button upload;
         private System.Windows.Forms.ComboBox specialBox;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label10;
@@ -1541,13 +1552,13 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ProgressBar progressBarSpdY;
         private System.Windows.Forms.ProgressBar progressBar4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button settings;
         private System.Windows.Forms.TextBox zSpeedText;
         private System.Windows.Forms.TrackBar yTrackBarSpeed;
         private System.Windows.Forms.TrackBar zTrackBarSpeed;
         private System.Windows.Forms.Button speedBtnY;
         private System.Windows.Forms.ProgressBar progressBarSpdZ;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button calibrate;
         private System.Windows.Forms.Button speedBtnZ;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label19;
@@ -1603,6 +1614,7 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button button1;
     }
 }
 

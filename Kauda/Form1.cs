@@ -72,46 +72,6 @@ namespace Kauda
             }
         }
 
-        /*  private void zAxisBtn_Click(object sender, EventArgs e)
-          {
-              SendCommand("Z", zStepNum.Text);
-          }
-
-          private void yAxisBtn_Click(object sender, EventArgs e)
-          {
-              SendCommand("Y", yStepNum.Text);
-          }
-
-          private void hAxisBtn_Click(object sender, EventArgs e)
-          {
-              SendCommand("H", hStepNum.Text);
-          }
-
-          private void vAxisBtn_Click(object sender, EventArgs e)
-          {
-              SendCommand("V", vStepNum.Text);
-          }
-
-          private void wAxisBtn_Click(object sender, EventArgs e)
-          {
-              SendCommand("W", wStepNum.Text);
-          } */
-
-
-        /*private void speedBtnH1(object sender, EventArgs e)
-        {
-            SendSpeedCommand('H', hTrackBarSpeed.Value);
-        }
-
-        private void speedBtnY1(object sender, EventArgs e)
-        {
-            SendSpeedCommand('Y', yTrackBarSpeed.Value);
-        }
-
-        private void speedBtnZ1(object sender, EventArgs e)
-        {
-            SendSpeedCommand('Z', zTrackBarSpeed.Value);
-        }*/
 
         private void speedBtnH_Click(object sender, EventArgs e)
         {
@@ -298,11 +258,6 @@ namespace Kauda
 
         //robot dance accle stepper moves
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void SetupSpecialMovesCombo()
         {
             specialBox.Items.Add("Crab Dance");
@@ -331,10 +286,6 @@ namespace Kauda
             }
         }
 
-        private void InitializeSerialPort()
-        {
-            serialPort1.DataReceived += SerialPort1_DataReceived;
-        }
 
         private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -428,7 +379,10 @@ namespace Kauda
             }
         }
 
+        private void specialBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
      
 }
