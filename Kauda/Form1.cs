@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.IO;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics; // Add this at the top
 
 
 
@@ -423,6 +418,23 @@ namespace Kauda
             }
         }
 
+        private void manual_Click(object sender, EventArgs e)
+        {
+            string filePath = Path.Combine(Application.StartupPath, "Resources", "USER-manual.docx");
+
+            if (File.Exists(filePath))
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = filePath,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                MessageBox.Show("Manual not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
      
 }

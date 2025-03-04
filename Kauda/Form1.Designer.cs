@@ -1150,6 +1150,7 @@
             this.manual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.manual.TabIndex = 45;
             this.manual.TabStop = false;
+            this.manual.Click += new System.EventHandler(this.manual_Click);
             // 
             // panel3
             // 
