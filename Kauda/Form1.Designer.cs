@@ -189,7 +189,6 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(138, 10);
             this.progressBar1.TabIndex = 72;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // specialBox
             // 
@@ -216,7 +215,6 @@
             this.button1.TabIndex = 39;
             this.button1.Text = "UPLOAD";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // getTemperatureBtn_Click
             // 
@@ -349,7 +347,6 @@
             this.tempReading.Name = "tempReading";
             this.tempReading.Size = new System.Drawing.Size(29, 14);
             this.tempReading.TabIndex = 3;
-            this.tempReading.Click += new System.EventHandler(this.tempReading_Click);
             // 
             // hTrackBar
             // 
@@ -623,7 +620,6 @@
             this.hTrackBarSpeed.Size = new System.Drawing.Size(254, 45);
             this.hTrackBarSpeed.TabIndex = 57;
             this.hTrackBarSpeed.TickFrequency = 10;
-            this.hTrackBarSpeed.Scroll += new System.EventHandler(this.hTrackBarSpeed_Scroll);
             // 
             // zStepNum
             // 
@@ -689,7 +685,6 @@
             this.button6.TabIndex = 64;
             this.button6.Text = "SETTINGS";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // zSpeedText
             // 
@@ -707,6 +702,7 @@
             this.yTrackBarSpeed.Size = new System.Drawing.Size(254, 45);
             this.yTrackBarSpeed.TabIndex = 56;
             this.yTrackBarSpeed.TickFrequency = 10;
+
             // 
             // zTrackBarSpeed
             // 
@@ -804,6 +800,7 @@
             this.gTrackBarGrip.Name = "gTrackBarGrip";
             this.gTrackBarGrip.Size = new System.Drawing.Size(252, 45);
             this.gTrackBarGrip.TabIndex = 53;
+
             // 
             // label16
             // 
@@ -849,6 +846,7 @@
             this.wSpeedText.Name = "wSpeedText";
             this.wSpeedText.Size = new System.Drawing.Size(39, 20);
             this.wSpeedText.TabIndex = 67;
+
             // 
             // vSpeedText
             // 
@@ -880,7 +878,7 @@
             this.vTrackBarSpeed.Size = new System.Drawing.Size(254, 45);
             this.vTrackBarSpeed.TabIndex = 65;
             this.vTrackBarSpeed.TickFrequency = 10;
-            this.vTrackBarSpeed.Scroll += new System.EventHandler(this.vTrackBarSpeed_Scroll);
+
             // 
             // humidityReading
             // 
@@ -897,6 +895,7 @@
             this.wTrackBarSpeed.Size = new System.Drawing.Size(254, 45);
             this.wTrackBarSpeed.TabIndex = 66;
             this.wTrackBarSpeed.TickFrequency = 10;
+
             // 
             // gripBtn
             // 
@@ -1234,7 +1233,7 @@
             this.label36.Size = new System.Drawing.Size(74, 17);
             this.label36.TabIndex = 58;
             this.label36.Text = "Temp: 42°C";
-            this.label36.Click += new System.EventHandler(this.label36_Click);
+
             // 
             // label30
             // 
@@ -1247,7 +1246,7 @@
             this.label30.Size = new System.Drawing.Size(102, 20);
             this.label30.TabIndex = 57;
             this.label30.Text = "System Status";
-            this.label30.Click += new System.EventHandler(this.label30_Click);
+
             // 
             // label29
             // 

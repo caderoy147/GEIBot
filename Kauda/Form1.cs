@@ -22,8 +22,6 @@ namespace Kauda
         private const int W_MIN_ACTUAL = 10;
         private const int W_MAX_DISPLAY = 180; // Assuming 100 is the maximum value
 
-        private Timer sensorTimer;
-
         public Form1()
         {
             InitializeComponent();
@@ -118,6 +116,8 @@ namespace Kauda
         private void speedBtnH_Click(object sender, EventArgs e)
         {
             SendSpeedCommand('H', hTrackBarSpeed.Value);
+            //this or buttons like this are for controlling 
+            // saving the speed
         }
 
         private void speedBtnY_Click(object sender, EventArgs e)
@@ -181,6 +181,7 @@ namespace Kauda
 
         private void zTrackBar_Scroll(object sender, EventArgs e)
         {
+            //function like this is for controlling angle.
             zStepNum.Text = zTrackBar.Value.ToString();
         }
 
@@ -270,6 +271,8 @@ namespace Kauda
         private void zAxisBtn_Click(object sender, EventArgs e)
         {
             SendMovementCommand('Z', int.Parse(zStepNum.Text));
+            //these and buttons like this are for 'run'
+            //when clicked the serail sends omething and the arm robot moves
         }
 
         private void yAxisBtn_Click(object sender, EventArgs e)
@@ -425,45 +428,7 @@ namespace Kauda
             }
         }
 
-        private void vTrackBarSpeed_Scroll(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label36_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tempReading_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hTrackBarSpeed_Scroll(object sender, EventArgs e)
-        {
-
-        }
     }
      
 }
