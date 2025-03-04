@@ -25,7 +25,8 @@ namespace Kauda
         public Form1()
         {
             InitializeComponent();
-        
+            PopulateSerialPorts();
+
             // serialPort1.Open();
 
             // Add event handlers for TextChanged events
@@ -45,8 +46,77 @@ namespace Kauda
             SetupSpeedControls();
             SetupSpecialMovesCombo();
         }
-        
-        
+
+
+        //new for serial port detection
+        private void PopulateSerialPorts()
+        {
+            port_connect.Items.Clear(); // Clear old list
+            string[] ports = SerialPort.GetPortNames(); // Get available ports
+
+            foreach (string port in ports)
+            {
+                string displayName = port; // Default: Just show COMx
+
+                // Try to identify if it's an Arduino
+                using (SerialPort tempSerial = new SerialPort(port, 9600)) // Change baud rate if needed
+                {
+                    try
+                    {
+                        tempSerial.Open();
+                        tempSerial.WriteLine("V"); // Example: Ask Arduino for version
+                        System.Threading.Thread.Sleep(100); // Wait for response
+
+                        string response = tempSerial.ReadExisting();
+                        if (response.Contains("Arduino"))
+                        {
+                            displayName += " (Arduino)";
+                        }
+                        tempSerial.Close();
+                    }
+                    catch { /* Ignore errors for non-Arduino devices */ }
+                }
+
+                port_connect.Items.Add(displayName);
+            }
+
+            if (port_connect.Items.Count > 0)
+            {
+                port_connect.SelectedIndex = 0; // Auto-select first port
+            }
+        }
+
+
+        //SIDE BAR FEATURES
+
+        //port selector
+        private void port_connect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (port_connect.SelectedItem != null)
+            {
+                string selectedPort = port_connect.SelectedItem.ToString().Split(' ')[0]; // Extract "COMx"
+                serialPort1.PortName = selectedPort;
+            }
+
+        }
+
+        //port connection status
+        private void connection_status_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+        //End of side bar
+
+
+
         private void StepNum_TextChanged(object sender, EventArgs e)
         {
             if (sender is TextBox textBox && int.TryParse(textBox.Text, out int value))
@@ -100,34 +170,8 @@ namespace Kauda
             SendSpeedCommand('W', wTrackBarSpeed.Value);
         }
 
-        private void SendCommand(string axis, string steps)
-        {
-            if (int.TryParse(steps, out int stepValue))
-            {
-                if (axis == "W")
-                {
-                    // Map the display value (0-100) to actual value (10-100)
-                    int actualValue = MapWValue(stepValue);
-                    string command = $"W{actualValue}\n";
-                    serialPort1.Write(command);
-                }
-                else
-                {
-                    string command = $"{axis}{stepValue}\n";
-                    serialPort1.Write(command);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Invalid step value. Please enter a valid number.");
-            }
-        }
 
-        private int MapWValue(int displayValue)
-        {
-            // Map 0-100 to 10-100
-            return (int)Math.Round((double)(W_MAX_DISPLAY - displayValue) / W_MAX_DISPLAY * (W_MAX_DISPLAY - W_MIN_ACTUAL) + W_MIN_ACTUAL);
-        }
+
 
         private void gripBtn_Click(object sender, EventArgs e)
         {
@@ -379,10 +423,6 @@ namespace Kauda
             }
         }
 
-        private void specialBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
      
 }

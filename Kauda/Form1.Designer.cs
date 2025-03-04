@@ -39,7 +39,7 @@
             this.getTemperatureBtn_Click = new System.Windows.Forms.Button();
             this.temperatureCLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.port_connect = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -120,13 +120,13 @@
             this.label27 = new System.Windows.Forms.Label();
             this.progressBar6 = new System.Windows.Forms.ProgressBar();
             this.progressBar5 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.manual = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
+            this.connection_status = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -154,7 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gTrackBarGrip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vTrackBarSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wTrackBarSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manual)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -194,13 +194,10 @@
             // specialBox
             // 
             this.specialBox.FormattingEnabled = true;
-            this.specialBox.Items.AddRange(new object[] {
-            "CRAB DANCE"});
             this.specialBox.Location = new System.Drawing.Point(3, 16);
             this.specialBox.Name = "specialBox";
             this.specialBox.Size = new System.Drawing.Size(79, 21);
             this.specialBox.TabIndex = 0;
-            this.specialBox.SelectedIndexChanged += new System.EventHandler(this.specialBox_SelectedIndexChanged);
             // 
             // upload
             // 
@@ -256,13 +253,14 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "PORT:";
             // 
-            // comboBox2
+            // port_connect
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(65, 14);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(66, 21);
-            this.comboBox2.TabIndex = 1;
+            this.port_connect.FormattingEnabled = true;
+            this.port_connect.Location = new System.Drawing.Point(65, 14);
+            this.port_connect.Name = "port_connect";
+            this.port_connect.Size = new System.Drawing.Size(66, 21);
+            this.port_connect.TabIndex = 1;
+            this.port_connect.SelectedIndexChanged += new System.EventHandler(this.port_connect_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -276,7 +274,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.port_connect);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Location = new System.Drawing.Point(17, 47);
             this.panel1.Name = "panel1";
@@ -1141,17 +1139,17 @@
             this.progressBar5.Size = new System.Drawing.Size(84, 10);
             this.progressBar5.TabIndex = 86;
             // 
-            // pictureBox6
+            // manual
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = global::Kauda.Properties.Resources.book_solid;
-            this.pictureBox6.Location = new System.Drawing.Point(809, 518);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(57, 45);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 45;
-            this.pictureBox6.TabStop = false;
+            this.manual.BackColor = System.Drawing.Color.White;
+            this.manual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manual.Image = global::Kauda.Properties.Resources.book_solid;
+            this.manual.Location = new System.Drawing.Point(809, 518);
+            this.manual.Name = "manual";
+            this.manual.Size = new System.Drawing.Size(57, 45);
+            this.manual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.manual.TabIndex = 45;
+            this.manual.TabStop = false;
             // 
             // panel3
             // 
@@ -1188,7 +1186,7 @@
             this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.progressBar1);
             this.panel6.Controls.Add(this.label38);
-            this.panel6.Controls.Add(this.label37);
+            this.panel6.Controls.Add(this.connection_status);
             this.panel6.Controls.Add(this.label36);
             this.panel6.Controls.Add(this.label30);
             this.panel6.Location = new System.Drawing.Point(12, 427);
@@ -1224,17 +1222,18 @@
             this.label38.TabIndex = 60;
             this.label38.Text = "Humidity: 42%";
             // 
-            // label37
+            // connection_status
             // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.Gold;
-            this.label37.Location = new System.Drawing.Point(20, 46);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(115, 17);
-            this.label37.TabIndex = 59;
-            this.label37.Text = "----  Disconected !";
+            this.connection_status.AutoSize = true;
+            this.connection_status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
+            this.connection_status.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.connection_status.ForeColor = System.Drawing.Color.Gold;
+            this.connection_status.Location = new System.Drawing.Point(20, 46);
+            this.connection_status.Name = "connection_status";
+            this.connection_status.Size = new System.Drawing.Size(115, 17);
+            this.connection_status.TabIndex = 59;
+            this.connection_status.Text = "----  Disconected !";
+            this.connection_status.Click += new System.EventHandler(this.connection_status_Click);
             // 
             // label36
             // 
@@ -1450,7 +1449,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(37)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(1204, 601);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.manual);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel8);
@@ -1482,7 +1481,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gTrackBarGrip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vTrackBarSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wTrackBarSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manual)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1511,7 +1510,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button upload;
         private System.Windows.Forms.ComboBox specialBox;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox port_connect;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label temperatureCLabel;
         private System.Windows.Forms.ProgressBar progressBar1;
@@ -1595,7 +1594,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ProgressBar progressBar6;
         private System.Windows.Forms.ProgressBar progressBar5;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox manual;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
@@ -1612,7 +1611,7 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label connection_status;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button button1;
     }
